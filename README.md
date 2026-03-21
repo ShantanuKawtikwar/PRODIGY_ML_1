@@ -7,6 +7,8 @@ This repository contains a clean, production-ready, and fully documented **Linea
 
 It has been tailored to parse and learn directly from the standard [Kaggle House Prices: Advanced Regression Techniques Dataset](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data).
 
+Live demo : https://housing-price-prediction-model.vercel.app/
+
 ## 📁 Project Structure
 
 - `house_price_model.py`: The core object-oriented Python module. Includes comprehensive data loading, ETL preprocessing, model training, persistence (saving/loading), evaluation plotting, and inference logic.
