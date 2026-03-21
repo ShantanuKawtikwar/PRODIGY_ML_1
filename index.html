@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura | House Price Estimator</title>
+    <!-- Modern Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Abstract Background Elements -->
+    <div class="blob-wrapper">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <header class="header">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12L12 3L21 12M5 10V21H19V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 21V12H15V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Aura Appraisals</span>
+            </div>
+        </header>
+
+        <section class="predictor-card">
+            <div class="card-header">
+                <h1>Predict the Future of Living</h1>
+                <p>AI-driven residential valuations based on state-of-the-art predictive modeling.</p>
+            </div>
+
+            <form id="prediction-form" class="prediction-form">
+                <div class="form-group">
+                    <label for="square_footage">Square Footage</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <input type="number" id="square_footage" name="square_footage" placeholder="e.g. 2000" min="1" required>
+                        <span class="unit">sqft</span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bedrooms">Bedrooms</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 21V9C3 7.89543 3.89543 7 5 7H19C20.1046 7 21 7.89543 21 9V21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M3 21H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M10 14H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M8 11H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <input type="number" id="bedrooms" name="bedrooms" placeholder="e.g. 3" min="0" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bathrooms">Bathrooms</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 10V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M3 10H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M12 4L12 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M8 4V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M16 4V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <input type="number" step="0.5" id="bathrooms" name="bathrooms" placeholder="e.g. 2.5" min="0" required>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submit-btn">
+                    <span class="btn-text">Calculate Estimate</span>
+                    <div class="loader-ring hidden" id="btn-loader"></div>
+                </button>
+            </form>
+
+            <div class="result-container" id="result-container">
+                <div class="result-label">Estimated Value</div>
+                <div class="result-value" id="result-value">$0</div>
+                <div class="result-error hidden" id="result-error">Unable to fetch prediction.</div>
+            </div>
+            
+        </section>
+        
+        <footer class="footer">
+            <p>Powered by the Advanced House Price Predictor Model</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
